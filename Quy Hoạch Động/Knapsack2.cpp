@@ -38,7 +38,7 @@ signed main(){
     cin >> N >> W;
     forUp(i, 1, N, 1) cin >> w[i] >> v[i];
     memset(dp, 0x3f, sizeof dp);
-    // Truòng hợp cơ sở : Khi không chọn đồ vật nào thì giá trị và khối lượng đều là 0
+    // Trường hợp cơ sở : Khi không chọn đồ vật nào thì giá trị và khối lượng đều là 0
     dp[0][0] = 0;
     forUp(i, 1, N, 1){
         forUp(j, 0, i * 1e3, 1){
