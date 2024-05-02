@@ -75,4 +75,4 @@ signed main(){
 
 */
 
-// 
+// https://oj.vnoi.info/problem/th_thpt_21_d
