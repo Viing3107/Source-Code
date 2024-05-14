@@ -67,4 +67,4 @@ signed main(){
 
 */
 
-// 
+// https://oj.vnoi.info/problem/dhbb21_easytask
