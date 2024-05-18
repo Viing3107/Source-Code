@@ -47,13 +47,11 @@ signed main(){
     forUp(i, 1, n, 1){
         cin >> a[i];
         prefixSum[i] = prefixSum[i - 1] + a[i];
-        if (isPrime(i)) ind.push_back(i - 1);
+        if (isPrime(i)) ind.push_back(i);
     }
-    minPrefix[1] = prefixSum[1];
-    forUp(i, 1, ind.size() - 1, 1) minPrefix[ind[i]] = min(minPrefix[ind[i - 1]], prefixSum[ind[i]]);
-    forUp(i, 1, ind.size() - 1, 1){
-        answer = max(answer, prefixSum[ind[i] + 1] - minPrefix[ind[i]]);
-    }
+    minPrefix[2] = prefixSum[1];
+    forUp(i, 1, ind.size() - 1, 1) minPrefix[ind[i]] = min(minPrefix[ind[i - 1]], prefixSum[ind[i] - 1]);
+    forUp(i, 0, ind.size() - 1, 1) answer = max(answer, prefixSum[ind[i]] - minPrefix[ind[i]]);
     cout << answer;
 
     return (0 ^ 0);
