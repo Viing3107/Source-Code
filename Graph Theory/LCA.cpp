@@ -17,7 +17,7 @@ const int MOD   = 1e9 + 7;
 const int INF   = 0x3f3f3f3f3f3f3f3f;
 const int LOG   = __lg(N) + 1;
 
-int n, m, par[N][LOG], dist[N], u, v;
+int n, m, par[N][LOG], dist[N], u, v, s, t;
 // par[i][j] : tổ tiên thứ 2 ^ j của đỉnh i
 // dist[i] : khoảng cách từ đỉnh i đến đỉnh gốc (hay còn gọi là độ sâu của đỉnh i)
 vector<int> adj[N];
@@ -106,7 +106,8 @@ signed main(){
     }
     DFS(1);
     dist[0] = -1; // Vì dist[1] = 0 nên ta gán dist[0] = -1 để tránh nhảy nhầm vào đỉnh 0
-    cout << LCA(1, 7);
+    cin >> s >> t;
+    cout << LCA(s, t);
 
     return (0 ^ 0);
 }
