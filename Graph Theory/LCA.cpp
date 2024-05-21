@@ -105,7 +105,7 @@ signed main(){
         adj[v].push_back(u);
     }
     DFS(1);
-    dist[0] = -1; // Vì dist[0] = 1 nên ta gán dist[0] = -1 để tránh nhảy nhầm vào đỉnh 0
+    dist[0] = -1; // Vì dist[1] = 0 nên ta gán dist[0] = -1 để tránh nhảy nhầm vào đỉnh 0
     cout << LCA(1, 7);
 
     return (0 ^ 0);
