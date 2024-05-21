@@ -52,8 +52,8 @@ void DFS(int u){
     for (auto v : adj[u]){
         /*
             Xét các đỉnh u kề với đỉnh v, khi đó u và v sẽ có các quan hệ sau :
-                - v là cha của u (par[u][0] = v)
-                - u là cha của v (par[v][0] = u)
+                - v là cha của u (hay nói cách khác, par[u][0] = v)
+                - u là cha của v (hay nói cách khác, par[v][0] = u)
                 --> nếu v không phải cha của u thì u là cha của v
         
         */
