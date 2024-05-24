@@ -16,14 +16,8 @@ const int N     = 1e5 + 5;
 const int MOD   = 1e9 + 7;
 const int INF   = 0x3f3f3f3f3f3f3f3f;
 
-int n, x, y, length;
-vector<int> bitx, bity, bit;
-
-int cntbit(int n){
-    int ans = 0;
-    for (; n; n >>= 1) ans++;
-    return ans;
-}
+int n, x, y;
+vector<int> bitx, bity;
 
 signed main(){
     ios_base::sync_with_stdio(0);
