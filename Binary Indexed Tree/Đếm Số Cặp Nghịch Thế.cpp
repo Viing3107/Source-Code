@@ -63,4 +63,4 @@ signed main(){
 
 */
 
-// 
+// https://oj.vnoi.info/problem/nkinv
