@@ -11,7 +11,7 @@ const int INF = 0x3f3f3f3f3f3f3f3f;
 const int N = 1e3 + 3;
 int n, m, u, v, a, b, w, weight, s, t, par[N];
 vector<pair<int, int>> adj[N];
-vector<int> path, d(n + 1, INF);
+vector<int> path, d(N + 1, INF);
 priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> Q;
 
 void input(){
