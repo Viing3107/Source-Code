@@ -50,8 +50,6 @@ signed main(){
         freopen(task".out", "w", stdout);
     }
 
-    
-
     cin >> n >> p;
     forUp(i, 1, n, 1){
         cin >> a[i];
@@ -60,20 +58,10 @@ signed main(){
     }
     factorial[0] = 1;
     forUp(i, 1, n, 1) factorial[i] = binaryMultiplication(factorial[i - 1], i);
-    if (p){
-        forUp(i, 0, even, 1){
-            forUp(j, 1, odd, 2){
-                int multi = binaryMultiplication(C(i, even), C(j, odd));
-                (result += multi) %= MOD;
-            }
-        }
-    }
-    else{
-        forUp(i, 0, even, 1){
-            forUp(j, 0, odd, 2){
-                int multi = binaryMultiplication(C(i, even), C(j, odd));
-                (result += multi) %= MOD;
-            }
+    forUp(i, 0, even, 1){
+        forUp(j, p, odd, 2){
+            int multi = binaryMultiplication(C(i, even), C(j, odd));
+            (result += multi) %= MOD;
         }
     }
     cout << result;
