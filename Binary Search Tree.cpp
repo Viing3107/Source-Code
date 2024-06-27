@@ -57,11 +57,12 @@ class BinarySearchTree{
                 }
             }
         }
+
         void search(node *head, int val){
             if (head == nullptr) return;
             cout << (*head).data << "\n";
             if ((*head).data < val) search((*head).right, val);
-            else search((*head).left, val);
+            else if ((*head).data > val) search((*head).left, val);
         }
 } bst;
 
@@ -79,8 +80,8 @@ signed main(){
     bst.head = bst.insert(bst.head, 60);
     bst.head = bst.insert(bst.head, 70);
     forUp(i, 1, 10, 1) bst.head = bst.insert(bst.head, i);
-    bst.erase(bst.head, 50);
-    bst.search(bst.head, 6);
+    bst.head = bst.erase(bst.head, 10);
+    bst.search(bst.head, 10);
     
     cerr << "Time elapsed : " << 1.0 * clock() / CLOCKS_PER_SEC << " .\n";
 
