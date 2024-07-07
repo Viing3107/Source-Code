@@ -41,7 +41,11 @@ signed main() {
         T /= 10;
     }
     a += log(res);
-    // res = s / 10
+    // res = s / (10 ^ số mũ cao nhất có thể)
+    // VD : s = 6000 -> res = s / (10 ^ 3) = 6
+    // VD : s = 123 -> res = s / (10 ^ 2) = 1.23
+
+    // ln(s) = (s.size() - 1) * ln(10) + ln(res) 
     // a = ln(res)
 
     forUp(i, 1, 100000, 1) preSum[i] = preSum[i - 1] + log(i);
