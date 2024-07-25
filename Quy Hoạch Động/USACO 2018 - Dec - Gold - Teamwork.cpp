@@ -29,7 +29,7 @@ int n, k, a[N], dp[N];
     gọi dp[i] là kĩ năng gói quà lớn nhất khi xét đến chú bò thứ i
 
     dp[i] = *max_element(a + 1, a + i + 1) nếu i <= k
-    dp[i] = max(dp[j], *max_element(a + j + 1, a + i + 1) * (j - i)) với mọi k <= j < i
+    dp[i] = max(dp[j], *max_element(a + j + 1, a + i + 1) * (i - j)) với mọi k <= j < i
 
     đáp án : dp[n]
 */
