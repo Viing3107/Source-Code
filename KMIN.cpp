@@ -39,3 +39,4 @@ int main(){
 }
 
 // https://oj.vnoi.info/problem/kmin
+// https://oj.vnoi.info/problem/fcb034_kthsum
