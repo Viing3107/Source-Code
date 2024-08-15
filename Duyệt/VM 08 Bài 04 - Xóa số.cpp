@@ -38,11 +38,6 @@ void sieve(int n) {
     }
 }
 
-void process() {
-    forUp(i, 0, SZ(s) - 2, 1) if (s[i] < s[i + 1]) return void(s.erase(s.begin() + i));
-    s.erase(s.end() - 1);
-}
-
 signed main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
