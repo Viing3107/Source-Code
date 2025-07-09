@@ -35,7 +35,7 @@ vi h[i] <= 1e9  --> nen chieu cao
 goi a[i] la chieu cao cua hoc sinh i sau khi nen
 b[i] la so hoc sinh co chieu cao = i
 khi them mot hoc sinh co chieu cao X vao:
-    vi tri cua hoc sinh nay = b[1] + b[2] + ... + b[X]
+    vi tri cua hoc sinh nay = b[1] + b[2] + ... + b[X] + 1
     b[X]++
 */
 
