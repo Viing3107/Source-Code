@@ -1,7 +1,7 @@
 /*
     Author : Do Quang Vinh
     Kim Son A High School - Ninh Binh
-    Created : 16:45:32 - 20/07/2025
+    Created : 17:25:48 - 20/07/2025
 
 */
 
@@ -32,48 +32,58 @@ int q, type;
 string s;
 
 struct Trie {
-    int child[N][26], isEnd[N], numNode;
+    struct node {
+        int child[26], cnt, exist;
 
+        /*
+        cnt: số lượng xâu đi qua hoặc kết thúc tại u
+        exist: số lượng xâu kết thúc tại u
+        */
+    };
+
+    node T[N];
+    int numNode;
+    
     Trie() {
-        memset(child, 0, sizeof child);
-        memset(isEnd, 0, sizeof isEnd);
+        forUp(i, 0, N - 1, 1) {
+            memset(T[i].child, 0, sizeof T[i].child);
+            T[i].cnt = T[i].exist = 0;
+        }
         numNode = 0;
     }
 
     void add(string &s) {
         int u = 0;
         forUp(i, 0, SZ(s) - 1, 1) {
-            if (!child[u][s[i] - 'a']) child[u][s[i] - 'a'] = ++numNode;
-            u = child[u][s[i] - 'a'];
+            int k = s[i] - 'a';
+            if (!T[u].child[k]) T[u].child[k] = ++numNode;
+            u = T[u].child[k];
+            T[u].cnt++;
         }
-        isEnd[u]++;
+        T[u].exist++;
     }
 
-    int getPrefix(string &s) {
+    // số xâu là tiền tố của s
+    int get1(string &s) {
         int u = 0, res = 0;
         forUp(i, 0, SZ(s) - 1, 1) {
-            if (!child[u][s[i] - 'a']) break;
-            u = child[u][s[i] - 'a'];
-            res += isEnd[u];
+            int k = s[i] - 'a';
+            if (!T[u].child[k]) break;
+            u = T[u].child[k];
+            res += T[u].exist;
         }
         return res;
     }
 
-    int res;
-    void DFS(int u) {
-        res += isEnd[u];
-        forUp(i, 0, 25, 1) if (child[u][i]) DFS(child[u][i]);
-    }
-
-    int get(string &s) {
+    // số xâu nhận s là tiền tố
+    int get2(string &s) {
         int u = 0;
         forUp(i, 0, SZ(s) - 1, 1) {
-            if (!child[u][s[i] - 'a']) return 0;
-            u = child[u][s[i] - 'a'];
+            int k = s[i] - 'a';
+            if (!T[u].child[k]) return 0;
+            u = T[u].child[k];
         }
-        res = 0;
-        DFS(u);
-        return res;
+        return T[u].cnt;
     }
 } pt;
 
@@ -91,8 +101,8 @@ signed main() {
     while (q--) {
         cin >> type >> s;
         if (!type) pt.add(s);
-        else if (type == 1) cout << pt.getPrefix(s) << endl;
-        else cout << pt.get(s) << endl;
+        else if (type == 1) cout << pt.get1(s) << endl;
+        else cout << pt.get2(s) << endl;
     }
     
     cerr << "Time elapsed : " << 1.0 * clock() / CLOCKS_PER_SEC << " s.\n";
