@@ -66,4 +66,4 @@ signed main(){
 
 */
 
-// https://oj.vnoi.info/problem/fc082_treecolor?fbclid=IwZXh0bgNhZW0CMTAAAR1MftLPNR41L21TuJq_ThQ6gUCZq2zMTKGBPGjXbMyrx_4m961GGmbqk90_aem_AV6VgSW_AQGD109jRqp8JvjUfTb5vnXjPfryReffbCr5F-yKecJmzjolt8xK5qnTYjSxpY-AT5AL7dLmsE-XXlaG
+// https://oj.vnoi.info/problem/fc082_treecolor
